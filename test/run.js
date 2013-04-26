@@ -1,23 +1,20 @@
-var Mimetyper = require("../lib/exec.js"),
-    instance = Mimetyper(),
+var Mimer = require("../lib/exec.js"),
+    instance = Mimer(),
     assert  = require("assert"),
     _       = require("lodash"),
-    extList = Mimetyper().list,
+    extList = Mimer().list,
     path = '/i/am/a/simple/path/file.',
     url = 'http://fake.com/umk/files/file.',
     cases = {}, expected;
 
 
 cases['should create a extension without dot'] = function () {
-    instance.set('fake','text/fake');
-
-    assert.strictEqual( instance.get('file.fake') , 'text/fake');
+    assert.strictEqual( instance.set('fake','text/fake').get('file.fake') , 'text/fake');
 }
 
 cases['should create a extension with dot'] = function () {
-    instance.set('.fake2','text/fake');
 
-    assert.strictEqual( instance.get('file.fake2') , 'text/fake');
+    assert.strictEqual( instance.set('.fake2','text/fake').get('file.fake2') , 'text/fake');
 }
 
 cases['should create multiple extensions'] = function () {
@@ -32,11 +29,11 @@ for (var ext in extList) {
         expected = extList[ext];
 
         cases['should run as function and get extension .' + ext + ' from ' + path + ext] = function () {
-            assert.strictEqual( Mimetyper(path + ext) , expected);
+            assert.strictEqual( Mimer(path + ext) , expected);
         };
 
         cases['should run as function and get extension .' + ext + ' from ' + url + ext] = function () {
-            assert.strictEqual( Mimetyper(url + ext) , expected);
+            assert.strictEqual( Mimer(url + ext) , expected);
         };
 
         cases['should run as object method and get extension .' + ext + ' from ' + path + ext] = function () {

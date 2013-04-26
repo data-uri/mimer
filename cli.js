@@ -1,13 +1,13 @@
 /*
- * mimetyper
- * https://github.com/heldr/mimetyper
+ * mimer
+ * https://github.com/heldr/mimer
  *
  * Copyright (c) 2013 Helder Santana
  * Licensed under the MIT license.
- * https://raw.github.com/heldr/mimetyper/master/MIT-LICENSE.txt
+ * https://raw.github.com/heldr/mimer/master/MIT-LICENSE.txt
  */
 
 var args = process.argv,
-    Mimetyper = require('./mimetyper');
+    Mimer = require('./mimer');
 
-console.log( '"' + Mimetyper( process.argv[2] ) + '"' );
+console.log( '"' + Mimer( process.argv[2] ) + '"' );
