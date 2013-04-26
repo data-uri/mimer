@@ -1,10 +1,8 @@
 var Mimetyper = require("../lib/exec.js"),
-    instance = new Mimetyper(),
     assert  = require("assert"),
     _       = require("lodash"),
     extList = Mimetyper().list,
     path = '/i/am/a/simple/path/file.',
-    winPath = 'C:' + path,
     url = 'http://fake.com/umk/files/file.',
     cases = {}, expected;
 
@@ -16,24 +14,16 @@ for (var ext in extList) {
             assert.strictEqual( Mimetyper(path + ext) , expected);
         };
 
-        cases['should run as function and get extension .' + ext + ' from ' + winPath + ext] = function () {
-            assert.strictEqual( Mimetyper(winPath + ext) , expected);
-        };
-
         cases['should run as function and get extension .' + ext + ' from ' + url + ext] = function () {
             assert.strictEqual( Mimetyper(url + ext) , expected);
         };
 
         cases['should run as object method and get extension .' + ext + ' from ' + path + ext] = function () {
-            assert.strictEqual( instance.get(path + ext) , expected);
-        };
-
-        cases['should run as object method and get extension .' + ext + ' from ' + winPath + ext] = function () {
-            assert.strictEqual( instance.get(winPath + ext) , expected);
+            assert.strictEqual( Mimetyper().get(path + ext) , expected);
         };
 
         cases['should run as object method and get extension .' + ext + ' from ' + url + ext] = function () {
-            assert.strictEqual( instance.get(url + ext) , expected);
+            assert.strictEqual( Mimetyper().get(url + ext) , expected);
         };
     }
 }
@@ -47,7 +37,7 @@ _.each( pairs , function (test_case) {
     console.log(' - done!');
 
     if( test_case === last ) {
-        console.log( '\n All ' + cases.length + ' specs has successfully worked \n' );
+        console.log( '\n All ' + _.size(cases) + ' specs have successfully worked \n' );
     }
 
 });
