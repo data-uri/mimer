@@ -8,6 +8,9 @@ AS MODULE
 
 `npm install mimer` into your project
 
+Browser version: [Minified][browserminified] (with require included) [Source][browsersource] (with require included)
+
+
 ### Getting a mime type
 ```js
 
@@ -47,11 +50,15 @@ $ mimer brand.png
 DEVELOPING
 ----------
 
-The only essential library to develop mimer is jshint.
-
 ```CLI
 $ make install
 $ make test
+```
+
+Build web version with:
+
+```CLI
+$ make build
 ```
 
 If you'd like to test the full process including npm installer, just run:
@@ -67,3 +74,5 @@ MIT License
 
 [nodejs]: http://nodejs.org/download
 [mime]: http://en.wikipedia.org/wiki/MIME
+[browserminified]: https://raw.github.com/heldr/mimer/master/dist/mimer.min.js
+[browsersource]: https://raw.github.com/heldr/mimer/master/dist/mimer.js
