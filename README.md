@@ -31,9 +31,13 @@ mime.get('file.css');  // => "text/css"
 var Mimer = require('mimer.js'),
 	mime = new Mimer();
 
-mime.set('.monster','movie/thriller')
+mime.set('.monster', 'movie/thriller')
 	.get('zombie.monster');
 	// => "movie/thriller"
+
+mime.set(['.rctycoon','.simcity'], 'cms/game');
+mime.get('/land/park.rctycoon'); // => "cms/game"
+mime.get('maps/city.rctycoon'); // => "cms/game"
 
 ```
 
