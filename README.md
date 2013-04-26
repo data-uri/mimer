@@ -6,15 +6,15 @@ A simple [Mime][mime] type getter built on top of [Node.js][nodejs].
 AS MODULE
 ---------
 
-`npm install mimer` into your project
+**Browser version:** [Minified][browserminified] (with require included) [Source][browsersource] (with require included)
 
-Browser version: [Minified][browserminified] (with require included) [Source][browsersource] (with require included)
+**Node.js version:** `npm install mimer` into your project
 
 
 ### Getting a mime type
 ```js
 
-var Mimer = require('mimer');
+var Mimer = require('mimer.js');
 
 // you can use
 Mimer('file.css'); // => "text/css"
@@ -28,7 +28,7 @@ mime.get('file.css');  // => "text/css"
 ### Setting a mime type
 ```js
 
-var Mimer = require('mimer'),
+var Mimer = require('mimer.js'),
 	mime = new Mimer();
 
 mime.set('.monster','movie/thriller')
