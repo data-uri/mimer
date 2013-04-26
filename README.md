@@ -14,14 +14,11 @@ AS MODULE
 var Mimer = require('mimer');
 
 // you can use
-
 Mimer('file.css'); // => "text/css"
 
 // or
-
 var mime = new Mimer();
-
-mime.get('.css');  // => "text/css"
+mime.get('file.css');  // => "text/css"
 
 ```
 
@@ -32,7 +29,7 @@ var Mimer = require('mimer'),
 	mime = new Mimer();
 
 mime.set('.monster','movie/thriller')
-	.get('.monster');
+	.get('zombie.monster');
 	// => "movie/thriller"
 
 ```
