@@ -37,7 +37,7 @@ mime.set('.monster', 'movie/thriller')
 
 mime.set(['.rctycoon','.simcity'], 'cms/game');
 mime.get('/land/park.rctycoon'); // => "cms/game"
-mime.get('maps/city.rctycoon'); // => "cms/game"
+mime.get('maps/city.simcity'); // => "cms/game"
 
 ```
 
