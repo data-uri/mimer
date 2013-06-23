@@ -6,7 +6,7 @@ A simple [Mime][mime] type getter built on top of [Node.js][nodejs].
 AS MODULE
 ---------
 
-**Browser version:** [Minified][browserminified] (with require included) [Source][browsersource] (with require included)
+**Browser version:**: `bower install mimer` or [Minified][browserminified] (with commonjs require included) [Source][browsersource] (with commonjs require included)
 
 **Node.js version:** `npm install mimer` into your project
 
@@ -77,6 +77,7 @@ MIT License
 (c) [Helder Santana](http://heldr.com)
 
 [nodejs]: http://nodejs.org/download
+[bower]: http://bower.io
 [mime]: http://en.wikipedia.org/wiki/MIME
 [browserminified]: https://raw.github.com/heldr/mimer/master/dist/mimer.min.js
 [browsersource]: https://raw.github.com/heldr/mimer/master/dist/mimer.js
