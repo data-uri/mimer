@@ -1,6 +1,6 @@
 {
   "name": "mimer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple Mime type getter",
   "main": "mimer.js",
   "scripts": {
@@ -27,9 +27,9 @@
   "author": "Helder Santana",
   "license": "MIT",
   "devDependencies": {
-    "jshint": "~1.1.0",
-    "lodash": "~1.2.0",
-    "uglify-js": "~2.2.5",
-    "browserify": "~2.13.2"
+    "jshint": "~2.4.2",
+    "lodash": "~2.4.1",
+    "uglify-js": "~2.4.11",
+    "browserify": "~3.24.1"
   }
 }

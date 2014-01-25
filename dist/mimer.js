@@ -1,9 +1,4 @@
-require=(function(e,t,n){function i(n,s){if(!t[n]){if(!e[n]){var o=typeof require=="function"&&require;if(!s&&o)return o(n,!0);if(r)return r(n,!0);throw new Error("Cannot find module '"+n+"'")}var u=t[n]={exports:{}};e[n][0].call(u.exports,function(t){var r=e[n][1][t];return i(r?r:t)},u,u.exports)}return t[n].exports}var r=typeof require=="function"&&require;for(var s=0;s<n.length;s++)i(n[s]);return i})({"./mimer.js":[function(require,module,exports){
-module.exports=require('GyUpUy');
-},{}],"GyUpUy":[function(require,module,exports){
-module.exports = require('./lib/exec');
-
-},{"./lib/exec":1}],1:[function(require,module,exports){
+require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*
  * mimer
  * https://github.com/heldr/mimer
@@ -42,12 +37,20 @@ Mimer.prototype = {
         }
     },
 
-    get : function ( ext ) {
-        ext = this.extGetter(ext).split('.')[1];
-        return ( this.list[ext] ) ? this.list[ext] : '\nInvalid extension';
+    get: function ( path ) {
+        var ext     = null,
+            generic = this.list.generic;
+
+        if (!path) {
+            return generic;
+        }
+
+        ext = this.extGetter(path).split('.')[1];
+
+        return this.list[ext] || generic;
     },
 
-    list : require('./extensions/single'),
+    list: require('./extensions/single'),
 
     _loadMultipleList : function () {
         var multiple = require('./extensions/multiple');
@@ -62,62 +65,8 @@ Mimer.prototype = {
 
 module.exports = Mimer;
 
-},{"./extensions/getter":2,"./extensions/single":3,"./extensions/multiple":4}],5:[function(require,module,exports){
-// shim for using process in browser
-
-var process = module.exports = {};
-
-process.nextTick = (function () {
-    var canSetImmediate = typeof window !== 'undefined'
-    && window.setImmediate;
-    var canPost = typeof window !== 'undefined'
-    && window.postMessage && window.addEventListener
-    ;
-
-    if (canSetImmediate) {
-        return function (f) { return window.setImmediate(f) };
-    }
-
-    if (canPost) {
-        var queue = [];
-        window.addEventListener('message', function (ev) {
-            if (ev.source === window && ev.data === 'process-tick') {
-                ev.stopPropagation();
-                if (queue.length > 0) {
-                    var fn = queue.shift();
-                    fn();
-                }
-            }
-        }, true);
-
-        return function nextTick(fn) {
-            queue.push(fn);
-            window.postMessage('process-tick', '*');
-        };
-    }
-
-    return function nextTick(fn) {
-        setTimeout(fn, 0);
-    };
-})();
-
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-}
-
-// TODO(shtylman)
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-
-},{}],2:[function(require,module,exports){
-(function(process){// Copyright Joyent, Inc. and other Node contributors.
+},{"./extensions/getter":2,"./extensions/multiple":3,"./extensions/single":4}],2:[function(require,module,exports){
+var process=require("__browserify_process");// Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the
@@ -186,8 +135,26 @@ function getter (path) {
 
 module.exports = getter;
 
-})(require("__browserify_process"))
-},{"__browserify_process":5}],3:[function(require,module,exports){
+},{"__browserify_process":7}],3:[function(require,module,exports){
+module.exports = {
+    "text/xml" : ['xml','rss'],
+    "image/svg+xml" : ['svg','svgz'],
+    "application/x-perl" : ['pl','pm'],
+    "application/x-pilot" : ['prc','pdb'],
+    "application/postscript" : ['ps','eps','ai'],
+    "image/tiff" : ['tif','tiff'],
+    "audio/ogg" : ['oga','ogg','spx'],
+    "audio/mpeg" : ['mpga','mpega','mp2','mp3','m4a'],
+    "video/mpeg" : ['mpeg','mpg','mpe'],
+    "application/java-archive" : ['jar','war','ear'],
+    "image/jpeg" : ['jpeg','jpg'],
+    "audio/midi" : ['mid','midi','kar'],
+    "application/x-x509-ca-cert" : ['der','pem','crt'],
+    "video/3gpp" : ['3gpp','3gp'],
+    "video/x-ms-asf" : ['asx','asf']
+};
+
+},{}],4:[function(require,module,exports){
 module.exports = {
     'html' : 'text/html',
     'css' : 'text/css',
@@ -239,28 +206,68 @@ module.exports = {
     'xpi' : "application/x-xpinstall",
     'zip' : "application/zip",
     'woff': "application/x-font-woff",
-    'json': "application/json"
+    'json': "application/json",
+    "generic" : "application/octet-stream"
 };
 
-},{}],4:[function(require,module,exports){
-module.exports = {
-    "text/xml" : ['xml','rss'],
-    "image/svg+xml" : ['svg','svgz'],
-    "application/x-perl" : ['pl','pm'],
-    "application/x-pilot" : ['prc','pdb'],
-    "application/postscript" : ['ps','eps','ai'],
-    "image/tiff" : ['tif','tiff'],
-    "audio/ogg" : ['oga','ogg','spx'],
-    "audio/mpeg" : ['mpga','mpega','mp2','mp3','m4a'],
-    "video/mpeg" : ['mpeg','mpg','mpe'],
-    "application/java-archive" : ['jar','war','ear'],
-    "image/jpeg" : ['jpeg','jpg'],
-    "audio/midi" : ['mid','midi','kar'],
-    "application/x-x509-ca-cert" : ['der','pem','crt'],
-    "video/3gpp" : ['3gpp','3gp'],
-    "video/x-ms-asf" : ['asx','asf'],
-    "application/octet-stream" : ['bin','exe','dll','deb','dmg','eot','iso','img','msi','msp','msm','ttf']
+},{}],"GyUpUy":[function(require,module,exports){
+module.exports = require('./lib/exec');
+
+},{"./lib/exec":1}],"./mimer.js":[function(require,module,exports){
+module.exports=require('GyUpUy');
+},{}],7:[function(require,module,exports){
+// shim for using process in browser
+
+var process = module.exports = {};
+
+process.nextTick = (function () {
+    var canSetImmediate = typeof window !== 'undefined'
+    && window.setImmediate;
+    var canPost = typeof window !== 'undefined'
+    && window.postMessage && window.addEventListener
+    ;
+
+    if (canSetImmediate) {
+        return function (f) { return window.setImmediate(f) };
+    }
+
+    if (canPost) {
+        var queue = [];
+        window.addEventListener('message', function (ev) {
+            var source = ev.source;
+            if ((source === window || source === null) && ev.data === 'process-tick') {
+                ev.stopPropagation();
+                if (queue.length > 0) {
+                    var fn = queue.shift();
+                    fn();
+                }
+            }
+        }, true);
+
+        return function nextTick(fn) {
+            queue.push(fn);
+            window.postMessage('process-tick', '*');
+        };
+    }
+
+    return function nextTick(fn) {
+        setTimeout(fn, 0);
+    };
+})();
+
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+}
+
+// TODO(shtylman)
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
 };
 
 },{}]},{},[])
-;

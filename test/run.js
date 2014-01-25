@@ -7,6 +7,13 @@ var Mimer = require("../lib/exec.js"),
     url = 'http://fake.com/umk/files/file.',
     cases = {}, expected;
 
+cases['should return generic mime octet-stream if get function has no param given'] = function () {
+    assert.strictEqual( instance.get() , 'application/octet-stream');
+}
+
+cases['should return generic mime octet-stream'] = function () {
+    assert.strictEqual( instance.get('file.fake') , 'application/octet-stream');
+}
 
 cases['should create a extension without dot'] = function () {
     assert.strictEqual( instance.set('fake','text/fake').get('file.fake') , 'text/fake');
