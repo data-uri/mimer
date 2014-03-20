@@ -27,9 +27,8 @@
   "author": "Helder Santana",
   "license": "MIT",
   "devDependencies": {
-    "jshint": "~2.4.2",
+    "jshint": "~2.4.4",
     "lodash": "~2.4.1",
-    "uglify-js": "~2.4.11",
-    "browserify": "~3.24.1"
+    "uglify-js": "~2.4.13"
   }
 }

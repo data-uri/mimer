@@ -13,7 +13,7 @@ lint:
 	$(MODULE)jshint mimer.js lib/*
 build:
 	@echo "Creating web file"
-	$(MODULE)browserify -r ./mimer.js > dist/mimer.js
+	node browser_build.js
 	@echo "Creating minified version"
 	$(MODULE)uglifyjs --comments '/mimer/' dist/mimer.js -o dist/mimer.min.js
 spec:

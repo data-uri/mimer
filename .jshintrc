@@ -9,9 +9,21 @@
     "noempty": true,
     "regexp": true,
     "undef": true,
-    "strict": false,
+    "unused": true,
+    "browser": true,
+    "node": true,
+    "strict": true,
     "trailing": true,
     "smarttabs": true,
-    "node": true,
-    "globalstrict": true
+    "globalstrict": true,
+    "white": true,
+    "indent": 4,
+    "jquery": true,
+    "validthis": true,
+    "expr": true,
+    "latedef": true,
+    "globals": {
+        "define": true,
+        "$_MIMER_DATA_LIST": true
+    }
 }

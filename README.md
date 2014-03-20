@@ -6,7 +6,7 @@ A simple [Mime][mime] type getter built on top of [Node.js][nodejs].
 AS MODULE
 ---------
 
-**Browser version:**: `bower install mimer` or [Minified][browserminified] (with commonjs require included) [Source][browsersource] (with commonjs require included)
+**Browser version:**: `bower install mimer` or [Minified][browserminified] (amd and CommonJS ready) [Source][browsersource]
 
 **Node.js version:** `npm install mimer` into your project
 
