@@ -1,11 +1,11 @@
-var Mimer = require("../lib/exec.js"),
+var Mimer    = require('../mimer.js'),
     instance = Mimer(),
-    assert  = require("assert"),
-    _       = require("lodash"),
-    extList = Mimer().list,
-    path = '/i/am/a/simple/path/file.',
-    url = 'http://fake.com/umk/files/file.',
-    cases = {}, expected;
+    assert   = require('assert'),
+    _pairs   = require('lodash.pairs'),
+    extList  = Mimer().list,
+    path     = '/i/am/a/simple/path/file.',
+    url      = 'http://fake.com/umk/files/file.',
+    cases    = {}, expected;
 
 cases['should return generic mime octet-stream if get function has no param given'] = function () {
     assert.strictEqual( instance.get() , 'application/octet-stream');
@@ -54,16 +54,16 @@ for (var ext in extList) {
 }
 
 
-var pairs = _.pairs(cases), last = _.last(pairs);
+var pairs = _pairs(cases), size = pairs.length, last = size - 1;
 
-_.each( pairs , function (test_case) {
+pairs.forEach(function (test_case, index) {
 
     console.log( '\n - ' + test_case[0] );
     test_case[1]();
     console.log(' - done!');
 
-    if( test_case === last ) {
-        console.log( '\n All ' + _.size(cases) + ' specs have successfully worked \n' );
+    if(index === last) {
+        console.log( '\n All ' + size + ' specs have successfully worked \n' );
     }
 
 });
