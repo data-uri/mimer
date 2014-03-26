@@ -19,7 +19,7 @@
         define('lodashPairs', [], function () {
             return lodashObjectPairs;
         });
-        define('specs', ['dist/mimer', 'lodashPairs', 'node_modules/chai/chai'], factory);
+        define('specs', ['dist/mimer.min', 'lodashPairs', 'node_modules/chai/chai'], factory);
     } else if (typeof exports === 'object') {
         // Node
         factory(require('../mimer.js'), lodashObjectPairs, require('assert'));
