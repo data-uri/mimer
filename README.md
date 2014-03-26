@@ -1,7 +1,7 @@
 Mimer [![Build Status](https://secure.travis-ci.org/heldr/mimer.png?branch=master)](http://travis-ci.org/heldr/mimer) [![NPM version](https://badge.fury.io/js/mimer.png)](http://badge.fury.io/js/mimer)
 =========
 
-A simple [Mime][mime] type getter built on top of [Node.js][nodejs].
+A simple [MIME][mime] type getter built on top of [Node.js][nodejs].
 
 AS MODULE
 ---------
@@ -11,25 +11,30 @@ AS MODULE
 **Node.js version:** `npm install mimer` into your project
 
 
-### Getting a mime type
+### Getting started
 ```js
+// node and browserify
+var Mimer = require('mimer');
 
-var Mimer = require('mimer.js');
+// amd (Require.js and etc)
+require('path/to/mimer', function (Mimer) {});
 
-// you can use
+// browser (through script tag)
+window.Mimer
+```
+
+#### Get a MIME type
+```js
 Mimer('file.css'); // => "text/css"
 
 // or
 var mime = new Mimer();
 mime.get('file.css');  // => "text/css"
-
 ```
 
-### Setting a mime type
+#### Set a MIME type
 ```js
-
-var Mimer = require('mimer.js'),
-	mime = new Mimer();
+var mime = new Mimer();
 
 mime.set('.monster', 'movie/thriller')
 	.get('zombie.monster');
@@ -38,7 +43,6 @@ mime.set('.monster', 'movie/thriller')
 mime.set(['.rctycoon','.simcity'], 'cms/game');
 mime.get('/land/park.rctycoon'); // => "cms/game"
 mime.get('maps/city.simcity'); // => "cms/game"
-
 ```
 
 AS CLIENT
@@ -70,6 +74,11 @@ If you'd like to test the full process including npm installer, just run:
 ```CLI
 $ make fulltest
 ```
+
+## Release notes
+
+* 0.2 - Follow IANA RFC and full AMD and browser support
+* 0.1 - First release
 
 ## License
 

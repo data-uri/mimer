@@ -19,4 +19,6 @@ build:
 spec:
 	@echo "Running test suite..."
 	$(NODE) test/run.js
+	$(NODE) test/server.js browser
+	$(NODE) test/server.js amd
 .PHONY: test fulltest clean lint build
