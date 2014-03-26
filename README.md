@@ -3,7 +3,7 @@ Mimer [![Build Status](https://secure.travis-ci.org/heldr/mimer.png?branch=maste
 
 A simple [MIME][mime] type getter built on top of [Node.js][nodejs].
 
-AS MODULE
+MODULE
 ---------
 
 **Browser version:**: `bower install mimer` or [Minified][browserminified] (amd and CommonJS ready) [Source][browsersource]
@@ -45,7 +45,7 @@ mime.get('/land/park.rctycoon'); // => "cms/game"
 mime.get('maps/city.simcity'); // => "cms/game"
 ```
 
-AS CLIENT
+CLIENT
 ---------
 
 `npm install -g mimer` (it may require Root privileges)
