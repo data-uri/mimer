@@ -16,7 +16,6 @@
   "bin": {
     "mimer": "./bin/mimer"
   },
-  "preferGlobal": true,
   "keywords": [
     "mime",
     "mimetype",
