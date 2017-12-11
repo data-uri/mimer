@@ -1,4 +1,4 @@
-Mimer [![Build Status](https://secure.travis-ci.org/heldr/mimer.png?branch=master)](http://travis-ci.org/heldr/mimer) [![NPM version](https://badge.fury.io/js/mimer.png)](http://badge.fury.io/js/mimer)
+Mimer [![Build Status](https://secure.travis-ci.org/data-uri/mimer.png?branch=master)](http://travis-ci.org/data-uri/mimer) [![NPM version](https://badge.fury.io/js/mimer.png)](http://badge.fury.io/js/mimer)
 =========
 
 A simple [MIME][mime] type getter built on top of [Node.js][nodejs].
