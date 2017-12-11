@@ -27,9 +27,10 @@
   "author": "Helder Santana",
   "license": "MIT",
   "devDependencies": {
-    "jshint": "~2.4.4",
-    "uglify-js": "~2.4.13",
     "chai": "~1.9.1",
-    "requirejs": "~2.1.11"
+    "jshint": "~2.4.4",
+    "phantomjs": "^2.1.7",
+    "requirejs": "~2.1.11",
+    "uglify-js": "^2.8.29"
   }
 }

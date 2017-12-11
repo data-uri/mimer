@@ -39,9 +39,7 @@ http.createServer(function(request, response) {
   });
 }).listen(parseInt(port, 10));
 
-console.log()
-
-phantomjs = spawn('phantomjs', ['test/phantom.js', 'http://localhost:' + port + '/test/' + process.argv[2] + '.html']);
+phantomjs = spawn(path.join(__dirname, '../node_modules/.bin/phantomjs'), ['test/phantom.js', 'http://localhost:' + port + '/test/' + process.argv[2] + '.html']);
 
 readline.createInterface({
   input     : phantomjs.stdout,
