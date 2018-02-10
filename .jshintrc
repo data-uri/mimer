@@ -1,6 +1,6 @@
 {
     "esnext": true,
-    "bitwise": true,
+    "bitwise": false,
     "curly": true,
     "eqeqeq": true,
     "latedef": true,
@@ -21,7 +21,6 @@
     "jquery": true,
     "validthis": true,
     "expr": true,
-    "latedef": true,
     "globals": {
         "define": true,
         "$_MIMER_DATA_LIST": true

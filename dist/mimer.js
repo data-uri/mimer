@@ -1,5 +1,5 @@
 /*
- * mimer - 0.2.1
+ * mimer - 0.2.3
  * https://github.com/heldr/mimer
  *
  * Copyright (c) 2013 Helder Santana
@@ -34,18 +34,8 @@
             return new Mimer();
         }
     },
-    _extGetter = (typeof process !== 'undefined' && process.platform === 'win32') ? require('./extensions/getter') : function (path) {
-        var last        = null,
-            splitPathRe = /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
-
-        if (!path.match('.')) {
-            return path;
-        }
-
-        path = splitPathRe.exec(path).slice(1);
-        last = path[path.length - 1];
-
-        return (last !== '') ? last : path[path.length - 2];
+    _extGetter = function (fileName) {
+        return fileName.slice((fileName.lastIndexOf(".") - 1 >>> 0) + 2);
     };
 
     Mimer.prototype = {
@@ -70,7 +60,7 @@
                 return generic;
             }
 
-            ext = _extGetter(path).split('.')[1];
+            ext = _extGetter(path);
 
             return this.list[ext] || generic;
         },
