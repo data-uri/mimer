@@ -1,5 +1,5 @@
 /*
- * mimer - 0.3.1
+ * mimer - 0.3.2
  * https://github.com/heldr/mimer
  *
  * Copyright (c) 2013 Helder Santana
@@ -61,8 +61,6 @@
             }
 
             ext = _extGetter(path);
-
-            console.log('_______________', ext);
 
             return this.list[ext] || generic;
         },
