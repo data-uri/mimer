@@ -75,6 +75,10 @@
         if (extList.hasOwnProperty(ext)) {
             expected = extList[ext];
 
+            cases['should run as function and get extension .' + ext] = function () {
+                assert.strictEqual(Mimer(ext), expected);
+            };
+
             cases['should run as function and get extension .' + ext + ' from ' + path + ext] = function () {
                 assert.strictEqual( Mimer(path + ext) , expected);
             };
