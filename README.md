@@ -77,6 +77,7 @@ $ make fulltest
 
 ## Release notes
 
+* 0.3 - Remove potential REDOS vulnerability. Thanks to [James Davis](http://people.cs.vt.edu/~davisjam/)
 * 0.2 - Follow IANA RFC and full AMD and browser support
 * 0.1 - First release
 
