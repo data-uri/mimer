@@ -15,7 +15,7 @@ build:
 	@echo "Creating web file"
 	node browser_build.js
 	@echo "Creating minified version"
-	$(MODULE)uglifyjs --comments '/mimer/' dist/mimer.js -m -o dist/mimer.min.js --source-map dist/mimer.map
+	$(MODULE)uglifyjs --comments '/mimer/' dist/mimer.js -m -o dist/mimer.min.js --source-map url --mangle
 spec:
 	@echo "Running test suite..."
 	$(NODE) test/run.js

@@ -11,7 +11,7 @@
     "url": "git://github.com/heldr/mimer.git"
   },
   "engines": {
-    "node": ">= 0.8"
+    "node": ">= 4.0"
   },
   "bin": {
     "mimer": "./bin/mimer"
@@ -26,10 +26,10 @@
   "author": "Helder Santana",
   "license": "MIT",
   "devDependencies": {
-    "chai": "~1.9.1",
-    "jshint": "^2.10.2",
-    "phantomjs": "^2.1.7",
-    "requirejs": "~2.1.11",
-    "uglify-js": "^2.8.29"
+    "chai": "4.2.0",
+    "jshint": "2.10.2",
+    "phantomjs": "2.1.7",
+    "requirejs": "2.3.6",
+    "uglify-js": "3.5.4"
   }
 }
