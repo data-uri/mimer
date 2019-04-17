@@ -4,9 +4,10 @@
   "description": "A simple Mime type getter",
   "main": "dist/mimer.js",
   "scripts": {
-    "test": "npm run lint && make build && jest --ci",
+    "test": "npm run lint && npm run build && jest --ci",
+    "build": "mkdir -p dist && node transpile && uglifyjs --comments '/mimer/' dist/mimer.js -m -o dist/mimer.min.js --source-map url --mangle",
     "lint": "jshint src/mimer.js",
-    "prepublish": "npm test"
+    "prepublish": "npm run test"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,12 @@
   "engines": {
     "node": ">= 4.0"
   },
+  "files": [
+    "dist",
+    "bin",
+    "cli.js",
+    "MIT-LICENSE.txt"
+  ],
   "bin": {
     "mimer": "./bin/mimer"
   },
