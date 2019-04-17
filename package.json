@@ -14,7 +14,7 @@
     "url": "git://github.com/heldr/mimer.git"
   },
   "engines": {
-    "node": ">= 4.0"
+    "node": ">= 6.0"
   },
   "files": [
     "dist",
