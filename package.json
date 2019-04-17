@@ -29,9 +29,8 @@
   "devDependencies": {
     "jshint": "2.10.2",
     "requirejs": "2.3.6",
-    "uglify-js": "3.5.4"
-  },
-  "dependencies": {
-    "jest": "^24.7.1"
+    "uglify-js": "3.5.4",
+    "jest": "^24.7.1",
+    "request": "^2.88.0"
   }
 }

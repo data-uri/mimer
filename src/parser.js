@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function (mimetypesFile) {
     var fs     = require('fs'),
-        obj    = {},
+        obj    = Object.create(null),
         config = null,
         mime   = null;
 

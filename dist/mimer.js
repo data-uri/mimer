@@ -6,9 +6,8 @@
  * Licensed under the MIT license.
  * https://raw.github.com/heldr/mimer/master/MIT-LICENSE.txt
  */
+'use strict';
 (function (root, factory) {
-    'use strict';
-
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define([], factory);
@@ -22,8 +21,6 @@
         root.Mimer = factory();
     }
 }(this, function () {
-    'use strict';
-
     var Mimer = function (extPath) {
         if (!(this instanceof Mimer)) {
             if (extPath) {
