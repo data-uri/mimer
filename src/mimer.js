@@ -6,7 +6,6 @@
  * Licensed under the MIT license.
  * https://raw.github.com/heldr/mimer/master/MIT-LICENSE.txt
  */
-
 (function (root, factory) {
     'use strict';
 
@@ -64,7 +63,7 @@
 
             return this.list[ext] || generic;
         },
-        list: (typeof process !== 'undefined' && process.cwd) ? require('./data/parser')(__dirname + '/data/mime.types') : $_MIMER_DATA_LIST
+        list: $_MIMER_DATA_LIST
     };
 
     return Mimer;
