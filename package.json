@@ -5,7 +5,8 @@
   "main": "dist/mimer.js",
   "scripts": {
     "test": "npm run lint && make build && jest --ci",
-    "lint": "jshint src/mimer.js"
+    "lint": "jshint src/mimer.js",
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",
