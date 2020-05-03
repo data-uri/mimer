@@ -5,7 +5,7 @@
   "main": "dist/mimer.js",
   "scripts": {
     "test": "npm run lint && npm run build && jest --ci",
-    "build": "mkdir -p dist && node transpile && uglifyjs --comments '/mimer/' dist/mimer.js -m -o dist/mimer.min.js --source-map url --mangle",
+    "build": "mkdir -p dist && cp src/mimer.d.ts dist/mimer.d.ts && node transpile && uglifyjs --comments '/mimer/' dist/mimer.js -m -o dist/mimer.min.js --source-map url --mangle",
     "lint": "jshint src/mimer.js",
     "prepublish": "npm run test"
   },
