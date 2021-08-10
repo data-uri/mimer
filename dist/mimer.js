@@ -1,5 +1,5 @@
 /*
- * mimer - 1.1.0
+ * mimer - 1.1.1
  * https://github.com/heldr/mimer
  *
  * Copyright (c) 2013 Helder Santana
