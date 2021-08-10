@@ -35,10 +35,10 @@
   "author": "Helder Santana",
   "license": "MIT",
   "devDependencies": {
-    "jshint": "2.10.2",
+    "jest": "^27.0.6",
+    "jshint": "^2.13.0",
+    "request": "^2.88.2",
     "requirejs": "2.3.6",
-    "uglify-js": "3.5.4",
-    "jest": "^24.7.1",
-    "request": "^2.88.0"
+    "uglify-js": "^3.14.1"
   }
 }
