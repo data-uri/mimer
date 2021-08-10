@@ -45,7 +45,7 @@ mime.get('/land/park.rctycoon'); // => "cms/game"
 mime.get('maps/city.simcity'); // => "cms/game"
 ```
 
-CLIENT
+CLI
 ---------
 
 `npm install -g mimer` (it may require Root privileges)
@@ -59,20 +59,14 @@ DEVELOPING
 ----------
 
 ```CLI
-$ make install
-$ make test
+$ npm i
+$ npm test
 ```
 
 Build web version with:
 
 ```CLI
-$ make build
-```
-
-If you'd like to test the full process including npm installer, just run:
-
-```CLI
-$ make fulltest
+$ npm run build
 ```
 
 ## Release notes
