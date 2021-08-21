@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['10', '12', '14', '16']
+        node: ['12', '14', '16']
     name: Check package on Node.js ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v2
