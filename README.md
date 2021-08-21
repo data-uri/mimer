@@ -48,6 +48,8 @@ npx mimer readme.pdf
 
 ## DEVELOPING
 
+Just create a new Github Codespace or:
+
 ```CLI
 $ npm i
 $ npm test
