@@ -1,1 +1,1 @@
-export default function mimerSafeMode(fileName: string): string;
+export default function MimerSafe(fileName: string): string;
