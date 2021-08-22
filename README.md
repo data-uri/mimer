@@ -1,4 +1,4 @@
-# Mimer [![Build Status](https://github.com/data-uri/mimer/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/data-uri/mimer/actions/workflows/main.yml?query=branch%3Amain)
+# Mimer [![Build Status](https://github.com/data-uri/mimer/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/data-uri/mimer/actions/workflows/main.yml?query=branch%3Amain) [![install size](https://packagephobia.com/badge?p=mimer)](https://packagephobia.com/result?p=mimer)
 
 A file extension to [MIME](http://en.wikipedia.org/wiki/MIME) type module. Uses [mime-db](https://npm.im/mime-db) data but with zero dependencies.
 
