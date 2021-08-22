@@ -1,6 +1,6 @@
 # Mimer [![Build Status](https://github.com/data-uri/mimer/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/data-uri/mimer/actions/workflows/main.yml?query=branch%3Amain)
 
-An file extension to [MIME](http://en.wikipedia.org/wiki/MIME) type module. Uses [mime-db](https://npm.im/mime-db) data but with zero dependencies.
+A file extension to [MIME](http://en.wikipedia.org/wiki/MIME) type module. Uses [mime-db](https://npm.im/mime-db) data but with zero dependencies.
 
 ## Getting started
 `npm install mimer` or `npx mimer <file>`.
