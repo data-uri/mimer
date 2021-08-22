@@ -1,6 +1,6 @@
 {
   "name": "mimer",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A simple Mime type getter",
   "main": "index.js",
   "scripts": {
