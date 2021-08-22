@@ -1,10 +1,11 @@
 # Mimer [![Build Status](https://github.com/data-uri/mimer/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/data-uri/mimer/actions/workflows/main.yml?query=branch%3Amain)
 
-> Another [MIME](http://en.wikipedia.org/wiki/MIME) type module. Exposes an extension Map reference of [mime-db](https://npm.im/mime-db) but with zero dependencies.
+An file extension to [MIME](http://en.wikipedia.org/wiki/MIME) type module. Uses [mime-db](https://npm.im/mime-db) data but with zero dependencies.
 
-## MODULE
+## Getting started
+`npm install mimer` or `npx mimer <file>`.
 
-### Getting started
+### Module
 ```js
 const mimer = require('mimer');
 
@@ -46,18 +47,18 @@ or just
 npx mimer readme.pdf
 ```
 
-## DEVELOPING
+## Contribute
 
 Just create a new Github Codespace or:
 
-```CLI
+```sh
+$ git clone https://github.com/data-uri/mimer.git
+$ cd mimer
 $ npm i
 $ npm test
 ```
 
-## Release notes
-
-See more in [Releases section](https://github.com/data-uri/mimer/releases).
+## [Changelog](https://github.com/data-uri/mimer/releases).
 
 ## License
 
