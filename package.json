@@ -2,11 +2,11 @@
   "name": "mimer",
   "version": "1.1.1",
   "description": "A simple Mime type getter",
-  "main": "dist/mimer.js",
+  "main": "index.js", 
   "scripts": {
-    "test": "npm run lint && npm run build && jest --ci",
-    "build": "mkdir -p dist && cp src/mimer.d.ts dist/mimer.d.ts && node transpile && uglifyjs --comments '/mimer/' dist/mimer.js -m -o dist/mimer.min.js --source-map url --mangle",
-    "lint": "jshint src/mimer.js",
+    "build": "node src/parser.mjs > map.js",
+    "pretest": "npm run build",
+    "test": "node test.mjs",
     "prepublish": "npm run test"
   },
   "repository": {
@@ -14,13 +14,17 @@
     "url": "git://github.com/heldr/mimer.git"
   },
   "engines": {
-    "node": ">= 6.0"
+    "node": ">= 12"
   },
   "files": [
-    "dist",
     "bin",
     "cli.js",
-    "MIT-LICENSE.txt"
+    "index.js",
+    "index.d.ts",
+    "safe.js",
+    "safe.d.ts",
+    "map.js",
+    "README.md"
   ],
   "bin": {
     "mimer": "./bin/mimer"
@@ -35,10 +39,6 @@
   "author": "Helder Santana",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^27.0.6",
-    "jshint": "^2.13.0",
-    "request": "^2.88.2",
-    "requirejs": "2.3.6",
-    "uglify-js": "^3.14.1"
+    "mime-db": "^1.49.0"
   }
 }

@@ -14,5 +14,6 @@ results
 
 /node_modules
 /npm-debug.log
-/bower_components
-/dist/mimer.d.ts
+
+# mime types db
+map.js
